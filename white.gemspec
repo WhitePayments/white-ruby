@@ -3,7 +3,7 @@ $:.unshift(File.join(File.dirname(__FILE__), 'lib'))
 require 'white/version'
 
 spec = Gem::Specification.new do |s|
-  s.name = 'white'
+  s.name = 'white_payments'
   s.version = White::VERSION
   s.summary = 'Ruby bindings for the White API'
   s.description = 'White is the easiest way to accept payments online in the middle east. See https://whitepayments.com for details.'
