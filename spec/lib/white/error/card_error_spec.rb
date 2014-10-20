@@ -86,7 +86,7 @@ describe White::CardError do
     end
   end
 
-  it "must be thown with invalid_card" do
+  it "must be thown with invalid_number" do
     White.api_key = "sk_test_1234567890abcdefghijklmnopq"
 
     begin
@@ -102,7 +102,7 @@ describe White::CardError do
         :description => "Charge for test@example.com"
       )
     rescue White::CardError => e
-      e.code.must_equal 'invalid_card'
+      e.code.must_equal 'invalid_number'
       e.http_status.must_equal 400
     end
   end

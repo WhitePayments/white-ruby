@@ -7,10 +7,10 @@ describe White::InvalidRequestError do
 
     lambda {
       response = White::Charge.create(
-        :amount => 400,
+        :amount => -1,
         :currency => "usd",
         :card => {
-          :number => "1",
+          :number => "4242424242424242",
           :exp_month => 11,
           :exp_year => 2014,
           :cvv => 123
