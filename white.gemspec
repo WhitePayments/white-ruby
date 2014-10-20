@@ -7,8 +7,8 @@ spec = Gem::Specification.new do |s|
   s.version = White::VERSION
   s.summary = 'Ruby bindings for the White API'
   s.description = 'White is the easiest way to accept payments online in the middle east. See https://whitepayments.com for details.'
-  s.authors = ['Sebastian Choren']
-  s.email = ['schoren@rockingsoft.com']
+  s.authors = ['Yazin Alirhayim','Sebastian Choren']
+  s.email = ['yazin@whitepayments.com']
   s.homepage = 'https://whitepayments.com/docs/'
   s.license = 'MIT'
 
