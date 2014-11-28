@@ -1,5 +1,6 @@
 require "httparty"
 require "white/charge"
+require "white/customer"
 require "white/errors/white_error"
 require "white/errors/authentication_error"
 require "white/errors/card_error"
