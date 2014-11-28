@@ -13,7 +13,7 @@ describe White::AuthenticationError do
           :number => "3566002020360505",
           :exp_month => 11,
           :exp_year => 2014,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )

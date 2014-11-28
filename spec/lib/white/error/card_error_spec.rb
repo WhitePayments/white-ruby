@@ -13,7 +13,7 @@ describe White::CardError do
           :number => "4000000000000002",
           :exp_month => 11,
           :exp_year => 2014,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )
@@ -34,7 +34,7 @@ describe White::CardError do
           :number => "4000000000000127",
           :exp_month => 11,
           :exp_year => 2014,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )
@@ -55,7 +55,7 @@ describe White::CardError do
           :number => "4000000000000069",
           :exp_month => 11,
           :exp_year => 2014,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )
@@ -76,7 +76,7 @@ describe White::CardError do
           :number => "4000000000000119",
           :exp_month => 11,
           :exp_year => 2014,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )
@@ -97,7 +97,7 @@ describe White::CardError do
           :number => "1234123412341234",
           :exp_month => 11,
           :exp_year => 2014,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )
@@ -118,7 +118,7 @@ describe White::CardError do
           :number => "4242424242424242",
           :exp_month => 15,
           :exp_year => 2014,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )
@@ -139,7 +139,7 @@ describe White::CardError do
           :number => "4242424242424242",
           :exp_month => 12,
           :exp_year => 2100,
-          :cvv => 123
+          :cvc => 123
         },
         :description => "Charge for test@example.com"
       )
