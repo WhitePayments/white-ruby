@@ -10,9 +10,9 @@ describe White::AuthenticationError do
         :amount => 400,
         :currency => "usd",
         :card => {
-          :number => "3566002020360505",
+          :number => "4242424242424242",
           :exp_month => 11,
-          :exp_year => 2014,
+          :exp_year => 2016,
           :cvc => 123
         },
         :description => "Charge for test@example.com"

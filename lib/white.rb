@@ -1,16 +1,16 @@
 require "httparty"
 require "white/charge"
-require "white/customer"
 require "white/errors/white_error"
 require "white/errors/authentication_error"
-require "white/errors/card_error"
-require "white/errors/invalid_request_error"
+require "white/errors/banking_error"
+require "white/errors/request_error"
+require "white/errors/processing_error"
 
 module White
   
   include HTTParty
 
-  @api_base = 'https://api.whitepayments.com'
+  @api_base = 'https://api.whitepayments.com/'
 
   def self.api_url(url='')
     @api_base + url
@@ -18,22 +18,29 @@ module White
 
   def self.handle_response(response)
     body = JSON.parse(response.body);
-    if(response.code == 400 and body['error']['type'] == 'card_error')
-      raise White::CardError.new(body['error']['message'], body['error']['code'], 400)
-    end
-    if(response.code == 422)
-      raise White::InvalidRequestError.new(body['error']['message'], 422)
+
+    if response.code.between?(200, 299) and !body.key?('error')
+      # The request was successful
+      return body
     end
 
-    if(response.code == 401)
-      raise White::AuthenticationError.new(body['error']['message'], 422)
+    # There was an error .. check the response
+    case body['error']['type']
+    when 'banking'
+      raise White::BankingError.new(body['error']['message'], body['error']['code'], response.code)
+
+    when 'authentication'
+      raise White::AuthenticationError.new(body['error']['message'], body['error']['code'], response.code)
+
+    when 'processing'
+      raise White::ProcessingError.new(body['error']['message'], body['error']['code'], response.code)
+
+    when 'request'
+      raise White::RequestError.new(body['error']['message'], body['error']['code'], response.code)
     end
 
-    if(response.code >= 500 && response.code < 600)
-      raise White::WhiteError.new(body['error']['message'], response.code)
-    end
-
-    body
+    # Otherwise, raise a General error
+    raise White::WhiteError.new(body['error']['message'], body['error']['code'], response.code)
   end
 
   def self.post(url, body={})

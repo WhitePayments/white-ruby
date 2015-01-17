@@ -3,7 +3,7 @@ require_relative '../../spec_helper'
 describe White::Charge do
  
   it "must create a new charge" do
-    White.api_key = "sk_test_1234567890abcdefghijklmnopq"
+    White.api_key = "test_sec_k_25dd497d7e657bb761ad6"
 
     response = White::Charge.create(
       :amount => 400,
@@ -11,13 +11,13 @@ describe White::Charge do
       :card => {
         :number => "4242424242424242",
         :exp_month => 11,
-        :exp_year => 2014,
+        :exp_year => 2016,
         :cvc => 123
       },
       :description => "Charge for test@example.com"
     )
 
-    response['is_captured'].must_equal true
+    response['captured_amount'].must_equal 400
   end
 
    it "must list created charges" do
