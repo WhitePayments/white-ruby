@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    white (1.0.0)
+    white_payments (2.0)
       httparty (~> 0.13)
       json (~> 1.8.1)
 
@@ -28,4 +28,4 @@ DEPENDENCIES
   minitest
   rake
   turn
-  white!
+  white_payments!

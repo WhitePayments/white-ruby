@@ -1,10 +1,11 @@
 require "httparty"
-require "white/charge"
-require "white/errors/white_error"
-require "white/errors/authentication_error"
-require "white/errors/banking_error"
-require "white/errors/request_error"
-require "white/errors/processing_error"
+require "./lib/white/customer"
+require "./lib/white/charge"
+require "./lib/white/errors/white_error"
+require "./lib/white/errors/authentication_error"
+require "./lib/white/errors/banking_error"
+require "./lib/white/errors/request_error"
+require "./lib/white/errors/processing_error"
 
 module White
   
