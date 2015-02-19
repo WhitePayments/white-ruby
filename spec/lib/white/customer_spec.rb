@@ -1,6 +1,7 @@
 require_relative '../../spec_helper'
+# require_relative '../../../lib/white/customer'
  
-describe White::Charge do
+describe White::Customer do
  
   it "must create a new customer" do
     White.api_key = "test_sec_k_25dd497d7e657bb761ad6"
@@ -14,7 +15,7 @@ describe White::Charge do
         :exp_year => 2016,
         :cvc => 123
       },
-      description => "Signed up at the Trade Show in Dec 2014"
+      :description => "Signed up at the Trade Show in Dec 2014"
     )
 
     response['name'].must_equal "Abdullah Ahmed"
