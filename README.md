@@ -7,7 +7,7 @@ White makes accepting payments in the Middle East ridiculously easy. Sign up for
 Using White with your Ruby project is simple. If you're using [bundler](http://bundler.io) (and really, who isn't these days amirite?), you just need to add one line to your `Gemfile`:
 
 ```ruby
-gem 'white_payments', require: 'white'
+gem 'white_payments'
 ```
 
 Now, running `bundle install` will pull the library directly to your local project.

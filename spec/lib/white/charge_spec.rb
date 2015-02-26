@@ -8,9 +8,7 @@ describe White::Charge do
     response = White::Charge.create(
       :amount => 400,
       :currency => "usd",
-      :email => "ahmed@example.com",
       :card => {
-        :name => "Abdullah Ahmed",
         :number => "4242424242424242",
         :exp_month => 11,
         :exp_year => 2016,
