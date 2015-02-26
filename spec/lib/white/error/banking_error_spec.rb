@@ -9,9 +9,7 @@ describe White::BankingError do
       response = White::Charge.create(
         :amount => 400,
         :currency => "usd",
-        :email => "abdullah@msn.com",
         :card => {
-          :name => "Abdullah Ahmed",
           :number => "4000000000000002",
           :exp_month => 11,
           :exp_year => 2016,
