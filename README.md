@@ -40,13 +40,14 @@ Now, for the fun part. Here's all the code you need to process a transaction wit
 White::Charge.create(
     :amount => 5,
     :currency => "aed",
+    :email => "customer@example.com",
     :card => {
       :number => "4242424242424242",
       :exp_month => 11,
       :exp_year => 2016,
       :cvv => 123
     },
-    :description => "Charge for test@example.com"
+    :description => "2kg of lizard tails, non-refundable"
   )
 ```
 
